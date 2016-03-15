@@ -23,13 +23,13 @@ namespace Rabbit.Reciever
                 {
                     var body = ea.Body;
                     var message = Encoding.UTF8.GetString(body);
-                    
-                    Console.WriteLine(message);
+                    Console.WriteLine(" [x] Received {0}", message);
                 };
                 channel.BasicConsume("hello", true, consumer);
+
+                Console.WriteLine(" Press [enter] to exit.");
+                Console.ReadLine();
             }
-            Console.WriteLine("Test");
-            Console.Read();
         }
     }
 }

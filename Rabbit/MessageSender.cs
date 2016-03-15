@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using RabbitMQ.Client;
 
 namespace Rabbit
@@ -23,6 +24,7 @@ namespace Rabbit
                                      routingKey: "hello",
                                      basicProperties: null,
                                      body: body);
+                
             }
         }
     }
