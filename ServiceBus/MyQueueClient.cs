@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using Microsoft.ServiceBus;
 using Microsoft.ServiceBus.Messaging;
 
@@ -11,8 +12,7 @@ namespace ServiceBus
 
         public MyQueueClient()
         {
-            var connectionString =
-                "Endpoint=sb://trhnet-march2016.servicebus.windows.net/;SharedAccessKeyName=manager;SharedAccessKey=Agq1HH4VHWuzh5pTEPEuUPlAre5Zad8zHymmQHGsbT4=";
+            var connectionString = File.ReadLines("ConnectionString.txt").FirstOrDefault();
             
             var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
 
