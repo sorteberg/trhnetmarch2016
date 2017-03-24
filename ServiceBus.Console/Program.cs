@@ -7,9 +7,11 @@ namespace ServiceBus.Console
     {
         static void Main()
         {
+            System.Console.Out.WriteLine("Skriv fødselsnummer:");
+            var fnr = System.Console.ReadLine();
             var client = new MyQueueClient();
             client.OnMessageReceived += System.Console.WriteLine;
-            client.Listen();
+            client.Listen(fnr);
 
             while (true)
             {
